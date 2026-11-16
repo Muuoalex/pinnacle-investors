@@ -1,45 +1,14 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    <url>
-        <loc>https://pinnacle-investors.pages.dev/</loc>
-    </url>
-
-    <url>
-        <loc>https://pinnacle-investors.pages.dev/about.html</loc>
-    </url>
-
-    <url>
-        <loc>https://pinnacle-investors.pages.dev/offer.html</loc>
-    </url>
-
-    <url>
-        <loc>https://pinnacle-investors.pages.dev/loans.html</loc>
-    </url>
-
-    <url>
-        <loc>https://pinnacle-investors.pages.dev/events.html</loc>
-    </url>
-
-    <url>
-        <loc>https://pinnacle-investors.pages.dev/leadership.html</loc>
-    </url>
-
-    <url>
-        <loc>https://pinnacle-investors.pages.dev/registration.html</loc>
-    </url>
-
-    <url>
-        <loc>https://pinnacle-investors.pages.dev/contact.html</loc>
-    </url>
-
-    <url>
-        <loc>https://pinnacle-investors.pages.dev/legal-status.html</loc>
-    </url>
-
-    <url>
-        <loc>https://pinnacle-investors.pages.dev/constitution.html</loc>
-    </url>
-
+    <url><loc>https://pinnacle-investors.pages.dev/</loc></url>
+    <url><loc>https://pinnacle-investors.pages.dev/about.html</loc></url>
+    <url><loc>https://pinnacle-investors.pages.dev/offer.html</loc></url>
+    <url><loc>https://pinnacle-investors.pages.dev/loans.html</loc></url>
+    <url><loc>https://pinnacle-investors.pages.dev/events.html</loc></url>
+    <url><loc>https://pinnacle-investors.pages.dev/leadership.html</loc></url>
+    <url><loc>https://pinnacle-investors.pages.dev/registration.html</loc></url>
+    <url><loc>https://pinnacle-investors.pages.dev/contact.html</loc></url>
+    <url><loc>https://pinnacle-investors.pages.dev/legal-status.html</loc></url>
+    <url><loc>https://pinnacle-investors.pages.dev/constitution.html</loc></url>
 </urlset>

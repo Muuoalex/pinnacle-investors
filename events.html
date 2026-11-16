@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Announcements & Events | Pinnacle Investors</title>
+
+  <style>
+    :root {
+      --green: #073B32;
+      --gold: #C6A15B;
+      --ivory: #F8F6EF;
+      --charcoal: #263238;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    header {
+      background: white;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .brand {
+      color: var(--green);
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    nav a {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #073B32, #105B4C);
+      color: white;
+      padding: 55px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 4px;
+      background: var(--gold);
+      margin: 17px auto;
+      border-radius: 5px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .heading {
+      color: var(--green);
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 30px;
+      color: #59666A;
+    }
+
+    .upcoming {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e4ddce;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .upcoming-header {
+      background: var(--green);
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .upcoming-header small {
+      color: var(--gold);
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .upcoming-header h2 {
+      font-size: 27px;
+      margin: 8px 0;
+    }
+
+    .event-body {
+      padding: 25px;
+    }
+
+    .event-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .detail {
+      background: var(--ivory);
+      padding: 16px;
+      border-left: 4px solid var(--gold);
+      border-radius: 7px;
+    }
+
+    .detail strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 5px;
+    }
+
+    .activities {
+      background: var(--ivory);
+      padding: 22px;
+      border-radius: 9px;
+    }
+
+    .activities h3 {
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .activities li {
+      margin: 9px 0 9px 22px;
+    }
+
+    .announcement {
+      background: #fff4dc;
+      border-left: 5px solid var(--gold);
+      padding: 18px;
+      border-radius: 7px;
+      margin-top: 22px;
+      font-size: 14px;
+    }
+
+    .notice-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .notice-card {
+      background: white;
+      border-radius: 9px;
+      padding: 20px;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    }
+
+    .notice-card h3 {
+      color: var(--green);
+      margin-bottom: 7px;
+    }
+
+    .notice-card p {
+      font-size: 14px;
+    }
+
+    .archive-label {
+      display: inline-block;
+      color: #59666A;
+      background: #e9ece9;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      margin-bottom: 9px;
+    }
+
+    .history-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .history-heading {
+      background: var(--green);
+      color: white;
+      padding: 20px;
+    }
+
+    .history-heading h3 {
+      color: var(--gold);
+    }
+
+    .history-content {
+      padding: 22px;
+    }
+
+    .history-content ol {
+      padding-left: 22px;
+      margin: 12px 0;
+    }
+
+    .history-content li {
+      margin-bottom: 7px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #e5e5e5;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    .caption {
+      text-align: center;
+      color: #59666A;
+      font-style: italic;
+      margin-top: 18px;
+      font-size: 14px;
+    }
+
+    .closing {
+      background: var(--green);
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .closing h2 {
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: var(--green);
+      color: white;
+      padding: 35px 6% 15px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    footer h3 {
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    footer a {
+      display: block;
+      color: white;
+      font-size: 14px;
+      margin: 7px 0;
+    }
+
+    footer p {
+      font-size: 14px;
+      margin: 6px 0;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      margin-top: 25px;
+      padding-top: 15px;
+      font-size: 12px;
+    }
+
+    @media(max-width: 650px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      .upcoming-header h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    PINNACLE INVESTORS SELF-HELP GROUP |
+    TOGETHER WE BUILD HOPE
+  </div>
+
+  <header>
+    <a href="index.html" class="brand">
+      PINNACLE INVESTORS
+      <span>TOGETHER WE BUILD HOPE</span>
+    </a>
+
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">About</a>
+      <a href="offer.html">Services</a>
+      <a href="loans.html">Loans</a>
+      <a href="registration.html">Join Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Announcements & Events</h1>
+    <div class="gold-line"></div>
+    <p>
+      Stay informed, celebrate our achievements and
+      remain connected to everything happening
+      within Pinnacle Investors.
+    </p>
+  </section>
+
+  <main>
+
+    <!-- UPCOMING EVENT -->
+
+    <section class="container">
+
+      <h2 class="heading">Upcoming Major Event</h2>
+
+      <p class="intro">
+        A special occasion bringing members together
+        to celebrate our journey, strengthen leadership
+        and explore our future opportunities.
+      </p>
+
+      <div class="upcoming">
+
+        <div class="upcoming-header">
+          <small>UPCOMING EVENT | 2027</small>
+
+          <h2>
+            Annual General Meeting & Anniversary
+          </h2>
+
+          <p>Together We Build Hope</p>
+        </div>
+
+        <div class="event-body">
+
+          <div class="event-details">
+
+            <div class="detail">
+              <strong>📅 Date</strong>
+              9 January 2027
+            </div>
+
+            <div class="detail">
+              <strong>📍 Venue</strong>
+              Phoenicia Hotel
+            </div>
+
+            <div class="detail">
+              <strong>Location</strong>
+              Kugeria Estate, Mushroom Road,
+              off Kiambu Road
+            </div>
+
+          </div>
+
+          <div class="activities">
+
+            <h3>Planned Activities</h3>
+
+            <ol>
+              <li>
+                Inauguration of new leaders and
+                recognition of the outgoing leadership.
+              </li>
+
+              <li>
+                Swearing-in of the incoming leaders.
+              </li>
+
+              <li>
+                Soft party and team-building activities.
+              </li>
+
+              <li>
+                Sharing of members' shares,
+                dividends and savings, in accordance
+                with approved group arrangements.
+              </li>
+
+              <li>
+                Welcoming new members into
+                Pinnacle Investors.
+              </li>
+
+              <li>
+                Proposing and discussing new
+                investment opportunities.
+              </li>
+            </ol>
+
+          </div>
+
+          <div class="announcement">
+            <strong>Important Notice:</strong>
+            Members are encouraged to prepare for
+            this important gathering. Further details
+            concerning the programme and any changes
+            will be communicated through official
+            group communication channels.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- LATEST ANNOUNCEMENTS -->
+
+    <section class="container">
+
+      <h2 class="heading">Latest Announcements</h2>
+
+      <p class="intro">
+        Important information and reminders
+        for all Pinnacle Investors members.
+      </p>
+
+      <div class="notice-list">
+
+        <div class="notice-card">
+          <h3>📢 Members' Meetings</h3>
+          <p>
+            Dates and arrangements for members'
+            meetings will be communicated through
+            official group channels.
+          </p>
+        </div>
+
+        <div class="notice-card">
+          <h3>📋 Keep Your Information Updated</h3>
+          <p>
+            Members are encouraged to ensure that
+            their contact information and membership
+            details remain up to date.
+          </p>
+        </div>
+
+        <div class="notice-card">
+          <h3>📖 Group Constitution</h3>
+          <p>
+            Members are encouraged to familiarise
+            themselves with the group's constitution,
+            policies and approved procedures.
+          </p>
+        </div>
+
+        <div class="notice-card">
+          <h3>🤝 Member Participation</h3>
+          <p>
+            Every member is encouraged to participate
+            in group activities, discussions and
+            decisions that contribute to our
+            collective progress.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECOND ANNIVERSARY -->
+
+    <section class="container">
+
+      <h2 class="heading">Our Journey & Achievements</h2>
+
+      <p class="intro">
+        Every milestone tells a story of unity,
+        commitment and collective progress.
+      </p>
+
+      <div class="history-card">
+
+        <div class="history-heading">
+          <span class="archive-label">
+            PAST EVENT | 2026
+          </span>
+
+          <h3>Second Anniversary Celebration</h3>
+
+          <p>Saturday, 23 May 2026</p>
+        </div>
+
+        <div class="history-content">
+
+          <p>
+            We proudly celebrated two years of
+            growth, unity and shared achievements.
+            The occasion brought members together
+            to reflect on our progress and future.
+          </p>
+
+          <h3>Activities and Agendas</h3>
+
+          <ol>
+            <li>
+              Celebrating two years of growth,
+              unity and achievements.
+            </li>
+
+            <li>Welcoming new members.</li>
+
+            <li>Financial analysis.</li>
+
+            <li>Projects progress.</li>
+
+            <li>
+              Proposal of a board of directors
+              and company establishment.
+            </li>
+          </ol>
+
+          <h3>Event Photographs</h3>
+
+          <div class="gallery">
+
+            <img src="cake1.jpg"
+                 alt="Second anniversary cake">
+
+            <img src="images /anniversary2002.jpg"
+                 alt="Second anniversary photograph">
+
+            <img src="images /anniversary2003.jpg"
+                 alt="Second anniversary photograph">
+
+            <img src="images /anniversary2009.jpg"
+                 alt="Second anniversary photograph">
+
+            <img src="images /anniversary2010.jpg"
+                 alt="Second anniversary photograph">
+
+            <img src="images /anniversary2011.jpg"
+                 alt="Second anniversary photograph">
+
+          </div>
+
+          <p class="caption">
+            Our Second Anniversary reflects the strength
+            of our unity, dedication and shared vision.
+            Thank you for celebrating this special milestone.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- 2026 AGM -->
+
+      <div class="history-card">
+
+        <div class="history-heading">
+          <span class="archive-label">
+            PAST EVENT | JANUARY 2026
+          </span>
+
+          <h3>2025–2026 Annual General Meeting</h3>
+
+          <p>23 January 2026</p>
+        </div>
+
+        <div class="history-content">
+
+          <p>
+            The Annual General Meeting was held at
+            Shanvilla Resort, Maragua, Murang'a County.
+            It marked an important occasion for
+            leadership transition and group planning.
+          </p>
+
+          <h3>Scheduled Activities</h3>
+
+          <ol>
+            <li>Election of the new management committee.</li>
+
+            <li>
+              Inauguration of elected officials into office.
+            </li>
+
+            <li>
+              Recognition of the outgoing management committee.
+            </li>
+
+            <li>Social celebration and team building.</li>
+
+            <li>
+              Sharing of members' shares, as applicable
+              under the group's arrangements.
+            </li>
+          </ol>
+
+          <h3>Event Photographs</h3>
+
+          <div class="gallery">
+
+            <img src="images /AGM1005.jpg"
+                 alt="Annual general meeting">
+
+            <img src="images /AGM1003.jpg"
+                 alt="Annual general meeting">
+
+            <img src="images /AGM1001.jpg"
+                 alt="Annual general meeting">
+
+            <img src="images /AGM1010.jpg"
+                 alt="Annual general meeting">
+
+            <img src="images /AGM1006.jpg"
+                 alt="Annual general meeting">
+
+            <img src="images /AGM1009.jpg"
+                 alt="Annual general meeting">
+
+          </div>
+
+          <p class="caption">
+            Thank you for being part of our Annual
+            General Meeting. Together We Grow,
+            Together We Prosper.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- FIRST ANNIVERSARY -->
+
+      <div class="history-card">
+
+        <div class="history-heading">
+          <span class="archive-label">
+            PAST EVENT | MAY 2025
+          </span>
+
+          <h3>First Anniversary & AGM</h3>
+
+          <p>20 May 2025</p>
+        </div>
+
+        <div class="history-content">
+
+          <p>
+            Our first anniversary marked the beginning
+            of a remarkable journey of growth, unity
+            and financial empowerment.
+          </p>
+
+          <p>
+            The celebration took place at Cassid Resort,
+            Murang'a County.
+          </p>
+
+          <h3>Activities and Agendas</h3>
+
+          <ol>
+            <li>Launching our group.</li>
+
+            <li>Celebrating our first anniversary.</li>
+
+            <li>Social celebration and team building.</li>
+          </ol>
+
+          <h3>Event Photographs</h3>
+
+          <div class="gallery">
+
+            <img src="/images /anniversary1001.jpg"
+                 alt="First anniversary photograph">
+
+            <img src="images /anniversary1002.jpg"
+                 alt="First anniversary photograph">
+
+            <img src="images /anniversary1003.jpg"
+                 alt="First anniversary photograph">
+
+            <img src="images /anniversary1004.jpg"
+                 alt="First anniversary photograph">
+
+            <img src="images /anniversary1005.jpg"
+                 alt="First anniversary photograph">
+
+            <img src="images /anniversary1008.jpg"
+                 alt="First anniversary photograph">
+
+          </div>
+
+          <p class="caption">
+            Our First Anniversary marked the beginning
+            of a journey of growth, unity and shared
+            ambition. We sincerely thank every member
+            and guest whose support shaped our progress.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="closing">
+
+      <h2>Together We Build Hope</h2>
+
+      <p>
+        Our past inspires us, our unity strengthens us
+        and our vision drives us forward.
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Pinnacle Investors</h3>
+
+        <p>Together We Build Hope.</p>
+
+        <p>
+          A community built on unity,
+          financial empowerment and shared growth.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="offer.html">Services</a>
+        <a href="loans.html">Loan Portal</a>
+        <a href="registration.html">Registration</a>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+
+        <p>📞 +254746546489</p>
+
+        <p>📧 pinnacleinvestors@gmail.com</p>
+
+        <p>📍 Murang'a County, Kenya</p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      &copy; 2026 Pinnacle Investors Self-Help Group.
+      All Rights Reserved.
+    </div>
+
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,523 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Services | Pinnacle Investors</title>
+
+  <style>
+    :root {
+      --green: #073B32;
+      --gold: #C6A15B;
+      --ivory: #F8F6EF;
+      --charcoal: #263238;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--green);
+      color: white;
+      padding: 10px 5%;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    header {
+      background: white;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .brand {
+      color: var(--green);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background: linear-gradient(
+        135deg,
+        #073B32,
+        #105B4C
+      );
+      color: white;
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 16px;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 4px;
+      background: var(--gold);
+      margin: 18px auto;
+      border-radius: 5px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    .section-heading {
+      text-align: center;
+      color: var(--green);
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 35px;
+      color: #59666A;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(230px, 1fr)
+      );
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 25px 22px;
+      border-radius: 12px;
+      border-bottom: 4px solid var(--gold);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+      color: var(--green);
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #59666A;
+    }
+
+    .highlight {
+      background: var(--green);
+      color: white;
+      padding: 40px 25px;
+      border-radius: 14px;
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    .highlight h2 {
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .highlight p {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .values-section {
+      background: white;
+      padding: 45px 20px;
+    }
+
+    .values-grid {
+      max-width: 1000px;
+      margin: 30px auto 0;
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(150px, 1fr)
+      );
+      gap: 15px;
+    }
+
+    .value {
+      background: var(--ivory);
+      border-left: 4px solid var(--gold);
+      padding: 16px;
+      border-radius: 7px;
+      text-align: center;
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    .cta h2 {
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    footer {
+      background: var(--green);
+      color: white;
+      padding: 35px 6% 15px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(200px, 1fr)
+      );
+      gap: 25px;
+    }
+
+    footer h3 {
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    footer a {
+      display: block;
+      color: white;
+      font-size: 14px;
+      margin: 7px 0;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    footer p {
+      font-size: 14px;
+      margin: 6px 0;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      padding-top: 15px;
+      margin-top: 25px;
+      font-size: 12px;
+    }
+
+    @media(max-width: 650px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .hero h1 {
+        font-size: 27px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    Pinnacle Investors Self-Help Group |
+    Together We Build Hope
+  </div>
+
+  <header>
+    <a href="index.html" class="brand">
+      PINNACLE INVESTORS
+      <span>TOGETHER WE BUILD HOPE</span>
+    </a>
+
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">About</a>
+      <a href="offer.html">Services</a>
+      <a href="loans.html">Loans</a>
+      <a href="events.html">Announcements&Events</a>
+      <a href="registration.html">Join Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Our Services</h1>
+    <div class="gold-line"></div>
+    <p>
+      Creating opportunities, encouraging financial
+      discipline and building a stronger future through
+      unity, savings and collective growth.
+    </p>
+  </section>
+
+  <main>
+
+    <section class="container">
+
+      <h2 class="section-heading">
+        What We Offer
+      </h2>
+
+      <p class="intro">
+        Pinnacle Investors is committed to empowering
+        its members through shared opportunities,
+        responsible financial practices and a culture
+        of mutual support.
+      </p>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">💰</div>
+          <h3>Savings & Financial Discipline</h3>
+          <p>
+            Encouraging members to develop consistent
+            saving habits, financial responsibility and
+            long-term financial discipline.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Investment Opportunities</h3>
+          <p>
+            Exploring suitable collective investment
+            opportunities that can support members'
+            financial growth and shared prosperity.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🤝</div>
+          <h3>Member Financial Support</h3>
+          <p>
+            Promoting mutual assistance among members
+            through agreed group procedures and
+            responsible financial planning.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏦</div>
+          <h3>Loan Information & Requests</h3>
+          <p>
+            Providing members with information about
+            available borrowing arrangements, eligibility
+            requirements and applicable group procedures.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📚</div>
+          <h3>Financial Literacy</h3>
+          <p>
+            Promoting knowledge in budgeting, saving,
+            investing and responsible management of
+            personal finances.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>Emergency Support</h3>
+          <p>
+            Encouraging a culture of standing together
+            during difficult times through support
+            arrangements agreed upon by members.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🚀</div>
+          <h3>Youth Empowerment</h3>
+          <p>
+            Supporting young people to explore
+            entrepreneurship, develop business ideas
+            and pursue meaningful opportunities.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="highlight">
+        <h2>Growing Together, Achieving More</h2>
+        <p>
+          We believe that unity, commitment and
+          responsible decision-making create a
+          foundation for sustainable growth.
+          Every member has a role to play in building
+          a stronger Pinnacle Investors.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="values-section">
+
+      <h2 class="section-heading">
+        Our Core Values
+      </h2>
+
+      <p class="intro">
+        The principles that guide our decisions,
+        relationships and commitment to one another.
+      </p>
+
+      <div class="values-grid">
+
+        <div class="value">Integrity</div>
+        <div class="value">Accountability</div>
+        <div class="value">Teamwork</div>
+        <div class="value">Equity & Fairness</div>
+        <div class="value">Financial Discipline</div>
+        <div class="value">Sustainability</div>
+        <div class="value">Trust</div>
+
+      </div>
+
+    </section>
+
+    <section class="cta">
+
+      <h2>Become Part of Our Journey</h2>
+
+      <p>
+        Join a community that believes in unity,
+        shared responsibility and collective progress.
+      </p>
+
+      <a href="registration.html" class="btn">
+        Explore Membership →
+      </a>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Pinnacle Investors</h3>
+        <p>
+          Together We Build Hope.
+        </p>
+        <p>
+          A community built on unity, financial
+          empowerment and shared growth.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="offer.html">Our Services</a>
+        <a href="registration.html">Registration</a>
+        <a href="events.html">Announcements&Events</a>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <p>📞 +254746546489</p>
+        <p>📧 pinnacleinvestors@gmail.com</p>
+        <p>📍 Murang'a County, Kenya</p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      &copy; 2026 Pinnacle Investors Self-Help Group.
+      All Rights Reserved.
+    </div>
+
+  </footer>
+
+</body>
+</html>

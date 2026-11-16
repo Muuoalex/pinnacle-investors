@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Member Loan Portal | Pinnacle Investors</title>
+
+  <style>
+    :root {
+      --green: #073B32;
+      --gold: #C6A15B;
+      --ivory: #F8F6EF;
+      --charcoal: #263238;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 9px;
+      font-size: 13px;
+    }
+
+    header {
+      background: white;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .brand {
+      color: var(--green);
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    nav a {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #073B32, #105B4C);
+      color: white;
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .gold-line {
+      width: 65px;
+      height: 4px;
+      background: var(--gold);
+      margin: 18px auto;
+      border-radius: 5px;
+    }
+
+    .container {
+      max-width: 1050px;
+      padding: 40px 20px;
+      margin: auto;
+    }
+
+    .heading {
+      color: var(--green);
+      text-align: center;
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      max-width: 750px;
+      margin: 0 auto 30px;
+      text-align: center;
+      color: #59666A;
+    }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 23px;
+      border-radius: 11px;
+      border-bottom: 4px solid var(--gold);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .card h3 {
+      color: var(--green);
+      margin-bottom: 9px;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #59666A;
+    }
+
+    .number {
+      font-size: 27px;
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .notice {
+      background: #fff5df;
+      border-left: 5px solid var(--gold);
+      padding: 18px;
+      border-radius: 7px;
+      margin: 25px 0;
+      font-size: 14px;
+    }
+
+    .notice h3 {
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .dark-panel {
+      background: var(--green);
+      color: white;
+      border-radius: 12px;
+      padding: 28px;
+      margin-top: 30px;
+    }
+
+    .dark-panel h2 {
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .dark-panel li {
+      margin: 9px 0 9px 20px;
+    }
+
+    .steps {
+      counter-reset: step;
+    }
+
+    .step {
+      background: white;
+      padding: 18px;
+      margin-bottom: 13px;
+      border-radius: 8px;
+      border-left: 4px solid var(--gold);
+    }
+
+    .step h3 {
+      color: var(--green);
+      font-size: 17px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: #59666A;
+    }
+
+    .calculator {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      max-width: 600px;
+      margin: 30px auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      color: var(--green);
+      margin: 13px 0 5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd2cf;
+      border-radius: 6px;
+      font-size: 15px;
+      background: white;
+    }
+
+    button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 18px;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #105B4C;
+    }
+
+    .result {
+      display: none;
+      background: var(--ivory);
+      padding: 16px;
+      margin-top: 18px;
+      border-radius: 7px;
+    }
+
+    .result strong {
+      color: var(--green);
+    }
+
+    .application {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .application h2 {
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .application p {
+      font-size: 14px;
+      color: #59666A;
+    }
+
+    .disabled-note {
+      background: #f1f1f1;
+      border-radius: 7px;
+      padding: 14px;
+      margin-top: 15px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    .cta h2 {
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    footer {
+      background: var(--green);
+      color: white;
+      padding: 35px 6% 15px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    footer h3 {
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    footer a {
+      display: block;
+      color: white;
+      font-size: 14px;
+      margin: 7px 0;
+    }
+
+    footer p {
+      font-size: 14px;
+      margin: 6px 0;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      margin-top: 25px;
+      padding-top: 15px;
+      font-size: 12px;
+    }
+
+    @media(max-width: 650px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 27px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    PINNACLE INVESTORS SELF-HELP GROUP |
+    TOGETHER WE BUILD HOPE
+  </div>
+
+  <header>
+    <a href="index.html" class="brand">
+      PINNACLE INVESTORS
+      <span>TOGETHER WE BUILD HOPE</span>
+    </a>
+
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">About</a>
+      <a href="offer.html">Services</a>
+      <a href="loans.html">Loans</a>
+      <a href="announcements.html">Updates</a>
+      <a href="registration.html">Join Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Member Loan Portal</h1>
+    <div class="gold-line"></div>
+    <p>
+      Access borrowing information, understand the
+      group's lending guidelines and explore the
+      digital loan application process.
+    </p>
+  </section>
+
+  <main>
+
+    <section class="container">
+
+      <h2 class="heading">Understanding Our Loan Policy</h2>
+
+      <p class="intro">
+        Pinnacle Investors promotes responsible borrowing
+        and mutual financial support among its members.
+        All borrowing arrangements are subject to the
+        group's approved rules and applicable procedures.
+      </p>
+
+      <div class="policy-grid">
+
+        <div class="card">
+          <div class="number">75%</div>
+          <h3>Standard Borrowing Limit</h3>
+          <p>
+            A member may borrow up to 75% of their
+            personal shares held in the group, subject
+            to the applicable approval process.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="number">4%</div>
+          <h3>Service Charge</h3>
+          <p>
+            A service charge of 4% of the amount
+            borrowed is deducted when the loan is issued.
+            The full principal borrowed, together with
+            applicable interest, remains repayable.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="number">3 Months</div>
+          <h3>Loans Below KSh 50,000</h3>
+          <p>
+            These loans have a maximum repayment
+            period of three months under the
+            existing group provision.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="number">5 Months</div>
+          <h3>Loans of KSh 50,000 and Above</h3>
+          <p>
+            These loans have a maximum repayment
+            period of five months under the
+            existing group provision.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="notice">
+        <h3>Important: Interest Rate Clarification</h3>
+        <p>
+          The group's existing rules contain a general
+          provision of 6% interest per month and another
+          provision specifying 5% per month on the amount
+          due for loans of KSh 50,000 and above.
+          These provisions are both retained pending
+          clarification by the group's leadership.
+        </p>
+        <p>
+          Members should confirm the applicable rate
+          and repayment calculation before accepting
+          a loan.
+        </p>
+      </div>
+
+      <div class="dark-panel">
+        <h2>Borrowing Beyond 75% of Personal Shares</h2>
+        <p>
+          A member may request an amount exceeding
+          75% of their personal shares when supported
+          by a suitable member guarantor whose shares
+          can meet the borrower's financial need,
+          subject to group approval.
+        </p>
+
+        <br>
+
+        <h3>Interest Distribution for Guaranteed Loans</h3>
+
+        <ul>
+          <li>25% goes to the guarantor's shares.</li>
+          <li>25% goes to the borrower's shares.</li>
+          <li>50% is shared among all members equally.</li>
+        </ul>
+
+        <p>
+          The guaranteed borrowing provision specifies
+          interest of 6% per month on the amount due.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="container">
+
+      <h2 class="heading">Loan Repayment & Responsibilities</h2>
+
+      <p class="intro">
+        Members are expected to understand their
+        repayment obligations and honour agreed
+        repayment arrangements.
+      </p>
+
+      <div class="step">
+        <h3>01. Repayment Period</h3>
+        <p>
+          Loans below KSh 50,000 have a maximum
+          period of three months, while loans of
+          KSh 50,000 and above have a maximum
+          period of five months.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3>02. Interest Obligations</h3>
+        <p>
+          Applicable interest is determined according
+          to the relevant group borrowing provision.
+          The ordinary-loan interest provisions are
+          pending leadership clarification.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3>03. Recovery of Outstanding Loans</h3>
+        <p>
+          Under the existing rules, any amount
+          outstanding at the end of the applicable
+          repayment period may be recovered from
+          the borrower's shares.
+        </p>
+      </div>
+
+      <div class="step">
+        <h3>04. Member Accountability</h3>
+        <p>
+          Every borrower is responsible for meeting
+          the agreed repayment obligations and
+          communicating with the group's leadership
+          where difficulties arise.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="container">
+
+      <h2 class="heading">Loan Eligibility Calculator</h2>
+
+      <p class="intro">
+        Estimate 75% of your personal shares to
+        understand the standard borrowing limit.
+      </p>
+
+      <div class="calculator">
+
+        <label for="shares">
+          Your Personal Shares (KSh)
+        </label>
+
+        <input
+          type="number"
+          id="shares"
+          min="0"
+          placeholder="Enter your total shares"
+        >
+
+        <button onclick="calculateLimit()">
+          Calculate Borrowing Limit
+        </button>
+
+        <div class="result" id="result">
+          <p>
+            Your estimated standard borrowing limit:
+          </p>
+          <h2 id="limit"></h2>
+          <p>
+            <strong>Note:</strong> This is an estimate
+            based on 75% of shares, not a loan approval.
+            Actual eligibility is subject to verification
+            and group approval.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="container">
+
+      <div class="application">
+
+        <h2>Digital Loan Application</h2>
+
+        <p>
+          We are developing a secure digital application
+          system to make loan requests easier for members.
+          The proposed system will allow members to submit
+          requests electronically, provide guarantor
+          information and monitor application progress.
+        </p>
+
+        <div class="disabled-note">
+          <strong>Application system coming soon.</strong>
+          <br>
+          Online loan submissions are not yet active.
+          Please do not send personal identification
+          documents or confidential financial information
+          through this demonstration page.
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="cta">
+
+      <h2>Need More Information?</h2>
+
+      <p>
+        Contact the group's leadership for clarification
+        on borrowing requirements and applicable procedures.
+      </p>
+
+      <a href="mailto:pinnacleinvestors@gmail.com">
+        Contact Pinnacle Investors
+      </a>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Pinnacle Investors</h3>
+        <p>Together We Build Hope.</p>
+        <p>
+          Building financial discipline, unity
+          and shared growth.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="offer.html">Services</a>
+        <a href="events.html">Announcements&Events</a>
+        <a href="registration.html">Registration</a>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <p>📞 +254746546489</p>
+        <p>📧 pinnacleinvestors@gmail.com</p>
+        <p>📍 Murang'a County, Kenya</p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      &copy; 2026 Pinnacle Investors Self-Help Group.
+      All Rights Reserved.
+    </div>
+
+  </footer>
+
+  <script>
+    function calculateLimit() {
+
+      const shares = Number(
+        document.getElementById("shares").value
+      );
+
+      if (!Number.isFinite(shares) || shares <= 0) {
+        alert("Please enter a valid share amount.");
+        return;
+      }
+
+      const limit = shares * 0.75;
+
+      document.getElementById("limit").textContent =
+        "KSh " + limit.toLocaleString("en-KE", {
+          maximumFractionDigits: 2
+        });
+
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

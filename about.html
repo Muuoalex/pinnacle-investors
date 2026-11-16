@@ -1,0 +1,921 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Pinnacle Investors</title>
+
+<meta name="description" content="Learn about Pinnacle Investors Self-Help Group, founded on 20th May 2024. Together We Build Hope.">
+
+<style>
+
+:root {
+    --green: #073B32;
+    --green-light: #10594A;
+    --gold: #C6A15B;
+    --gold-light: #E4C98D;
+    --ivory: #F8F6EF;
+    --white: #FFFFFF;
+    --dark: #263238;
+    --grey: #68747B;
+    --border: #E8E7DF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--dark);
+    line-height: 1.7;
+    background: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* TOP BAR */
+
+.topbar {
+    background: #052B25;
+    color: white;
+    padding: 9px 5%;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.topbar span {
+    color: var(--gold-light);
+}
+
+/* NAVIGATION */
+
+.navbar {
+    background: var(--green);
+    padding: 14px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--gold);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gold-light);
+    font-size: 20px;
+}
+
+.brand span {
+    color: var(--gold-light);
+}
+
+.menu-button {
+    background: var(--gold);
+    color: var(--green);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    right: 5%;
+    width: 230px;
+    background: white;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,.2);
+}
+
+.nav-links.show {
+    display: flex;
+}
+
+.nav-links a {
+    color: var(--green);
+    padding: 11px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-links a:hover {
+    background: var(--green);
+    color: white;
+}
+
+/* HERO */
+
+.page-hero {
+    background: linear-gradient(135deg, #073B32, #10594A);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.eyebrow {
+    color: var(--gold-light);
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.page-hero h1 {
+    color: var(--gold-light);
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.gold-line {
+    width: 60px;
+    height: 4px;
+    background: var(--gold);
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+.page-hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #E4EDE8;
+    font-size: 15px;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--green);
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.section-intro {
+    text-align: center;
+    color: var(--grey);
+    max-width: 750px;
+    margin: 0 auto 30px;
+    font-size: 14px;
+}
+
+/* WHO WE ARE */
+
+.who-section {
+    background: var(--ivory);
+}
+
+.who-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.who-content p {
+    margin-top: 15px;
+    color: var(--grey);
+    font-size: 15px;
+}
+
+/* HISTORY */
+
+.history-card {
+    max-width: 850px;
+    margin: 30px auto 0;
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--gold);
+    border-radius: 9px;
+    padding: 28px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+}
+
+.history-date {
+    display: inline-block;
+    background: #F5EBD5;
+    color: var(--green);
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.history-card h3 {
+    color: var(--green);
+    margin-bottom: 10px;
+}
+
+/* MISSION AND VISION */
+
+.purpose-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.purpose-card {
+    padding: 28px;
+    background: white;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    border-radius: 9px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+}
+
+.purpose-card .icon {
+    font-size: 34px;
+}
+
+.purpose-card h3 {
+    color: var(--green);
+    margin: 10px 0;
+}
+
+/* VALUES */
+
+.values-section {
+    background: var(--ivory);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.value-card {
+    background: white;
+    padding: 23px 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.value-card .icon {
+    font-size: 32px;
+}
+
+.value-card h3 {
+    color: var(--green);
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.value-card p {
+    font-size: 13px;
+    color: var(--grey);
+}
+
+/* OBJECTIVES */
+
+.objectives {
+    max-width: 800px;
+    margin: 30px auto 0;
+    list-style: none;
+}
+
+.objectives li {
+    background: var(--ivory);
+    padding: 14px 18px;
+    margin: 12px 0;
+    border-left: 4px solid var(--gold);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* COMMITMENT */
+
+.commitment {
+    background: var(--green);
+    color: white;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.commitment h2 {
+    color: var(--gold-light);
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.commitment p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #052B25;
+    color: white;
+    padding: 40px 6% 20px;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+footer h3 {
+    color: var(--gold-light);
+    margin-bottom: 14px;
+    font-size: 16px;
+}
+
+footer p,
+.footer-links {
+    color: #D5E1DA;
+    font-size: 13px;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+.footer-links {
+    display: block;
+    padding: 4px 0;
+}
+
+.footer-links:hover {
+    color: var(--gold-light);
+}
+
+.footer-bottom {
+    border-top: 1px solid #456158;
+    text-align: center;
+    padding-top: 18px;
+    margin-top: 30px;
+    font-size: 12px;
+    color: #D5E1DA;
+}
+
+/* BACK TO TOP */
+
+.back-top {
+    position: fixed;
+    bottom: 20px;
+    right: 18px;
+    background: var(--gold);
+    color: var(--green);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+
+    .page-hero h1 {
+        font-size: 27px;
+    }
+
+    .purpose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .topbar {
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <div>
+        <span>✉</span> pinnacleinvestors@gmail.com
+    </div>
+
+    <div>
+        <span>☎</span> +254746546489 |
+        Murang'a County, Kenya
+    </div>
+
+</div>
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="brand">
+
+        <div class="brand-icon">P</div>
+
+        <div>PINNACLE <span>INVESTORS</span></div>
+
+    </a>
+
+    <button class="menu-button"
+    onclick="toggleMenu()"
+    id="menuButton"
+    aria-expanded="false">
+
+        ☰ MENU
+
+    </button>
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="index.html">⌂ Home</a>
+        <a href="about.html">◈ About Us</a>
+        <a href="offer.html">▣ Services</a>
+        <a href="loans.html">💰 Loans & Borrowing</a>
+        <a href="events.html">🔔 Announcements &Events</a>
+        <a href="leadership.html">♙ Leadership</a>
+        <a href="registration.html">✚ Registration</a>
+        <a href="legal-status.html">⚖ Legal Status</a>
+        <a href="constitution.html">▤ Constitution</a>
+
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<header class="page-hero">
+
+    <div class="eyebrow">OUR IDENTITY • OUR PURPOSE</div>
+
+    <h1>About Pinnacle Investors</h1>
+
+    <div class="gold-line"></div>
+
+    <p>
+        A youth-driven Self-Help Group founded on
+        unity, saving, investment and collective growth.
+        Together We Build Hope.
+    </p>
+
+</header>
+
+<!-- WHO WE ARE -->
+
+<section class="section who-section">
+
+    <div class="container">
+
+        <div class="who-content">
+
+            <h2 class="section-title">Who We Are</h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Pinnacle Investors is a youth-driven
+                Self-Help Group founded on 20th May 2024,
+                built on the principles of saving,
+                investment, unity and growth.
+            </p>
+
+            <p>
+                It was established to create a strong
+                financial foundation for its members.
+                The group provides a platform for
+                nurturing responsible financial habits,
+                exploring investment opportunities and
+                supporting collective development.
+            </p>
+
+            <p>
+                We believe that meaningful progress
+                is achieved when individuals come
+                together with a shared vision,
+                commitment and accountability.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- OUR HISTORY -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">Our Journey</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="section-intro">
+            Every great journey begins with a vision.
+            Ours began with a shared desire to build
+            a stronger financial future.
+        </p>
+
+        <div class="history-card">
+
+            <span class="history-date">
+                20 MAY 2024
+            </span>
+
+            <h3>The Beginning of Pinnacle Investors</h3>
+
+            <p>
+                Pinnacle Investors was founded on
+                20th May 2024 with a vision of bringing
+                members together through saving,
+                investment and collective financial
+                empowerment.
+            </p>
+
+            <p style="margin-top:12px;">
+                Since its establishment, the group
+                has continued pursuing its commitment
+                to unity, transparency, accountability
+                and sustainable development.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MISSION AND VISION -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Our Mission & Vision
+        </h2>
+
+        <div class="gold-line"></div>
+
+        <div class="purpose-grid">
+
+            <div class="purpose-card">
+
+                <div class="icon">🎯</div>
+
+                <h3>Our Mission</h3>
+
+                <p>
+                    To empower our members through
+                    a culture of saving, responsible
+                    investment, shared opportunities
+                    and collective development.
+                </p>
+
+            </div>
+
+            <div class="purpose-card">
+
+                <div class="icon">🌍</div>
+
+                <h3>Our Vision</h3>
+
+                <p>
+                    To build a trusted and sustainable
+                    organization that transforms lives
+                    through cooperation, accountability
+                    and financial growth.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CORE VALUES -->
+
+<section class="section values-section">
+
+    <div class="container">
+
+        <h2 class="section-title">Our Core Values</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="section-intro">
+            The principles that guide our decisions,
+            relationships and activities.
+        </p>
+
+        <div class="values-grid">
+
+            <div class="value-card">
+                <div class="icon">🤝</div>
+                <h3>Unity</h3>
+                <p>Working together towards common goals.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="icon">🔍</div>
+                <h3>Transparency</h3>
+                <p>Promoting openness and accountability.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="icon">⚖️</div>
+                <h3>Integrity</h3>
+                <p>Doing what is right and honourable.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="icon">🌱</div>
+                <h3>Growth</h3>
+                <p>Encouraging continuous development.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="icon">💡</div>
+                <h3>Innovation</h3>
+                <p>Embracing ideas and better solutions.</p>
+            </div>
+
+            <div class="value-card">
+                <div class="icon">❤️</div>
+                <h3>Mutual Support</h3>
+                <p>Supporting one another in our journey.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- OBJECTIVES -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">Our Objectives</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="section-intro">
+            Our objectives provide direction
+            for our activities and future development.
+        </p>
+
+        <ul class="objectives">
+
+            <li>
+                ✓ Promote a culture of saving among members.
+            </li>
+
+            <li>
+                ✓ Explore sustainable investment opportunities.
+            </li>
+
+            <li>
+                ✓ Support members' financial growth and stability.
+            </li>
+
+            <li>
+                ✓ Uphold transparency, accountability and good governance.
+            </li>
+
+            <li>
+                ✓ Foster unity and shared prosperity among members.
+            </li>
+
+            <li>
+                ✓ Encourage participation in group activities and decisions.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- OUR COMMITMENT -->
+
+<section class="section">
+
+    <div class="container">
+
+        <h2 class="section-title">Our Commitment</h2>
+
+        <div class="gold-line"></div>
+
+        <p class="section-intro">
+
+            We are dedicated to building a financially
+            empowered community by promoting a culture
+            of saving, investing and responsible governance.
+
+            Our goal is to create lasting value for our
+            members through trust, professionalism
+            and continuous growth.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CLOSING -->
+
+<section class="commitment">
+
+    <div class="container">
+
+        <h2>Together We Build Hope</h2>
+
+        <p>
+            Our strength lies in unity, our progress
+            in commitment and our future in the
+            opportunities we create together.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-columns">
+
+        <div>
+
+            <h3>PINNACLE INVESTORS</h3>
+
+            <p>Together We Build Hope.</p>
+
+            <p>
+                Building stronger futures through
+                unity, accountability and growth.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html" class="footer-links">Home</a>
+            <a href="about.html" class="footer-links">About Us</a>
+            <a href="offer.html" class="footer-links">Services</a>
+            <a href="loans.html" class="footer-links">Loan Services</a>
+            <a href="events.html" class="footer-links">Announcements&Events</a>
+             <a href="registration.html" class="footer-links">Registration</a>
+
+        </div>
+
+        <div>
+
+            <h3>Contact Information</h3>
+
+            <p>☎ +254746546489</p>
+            <p>✉ pinnacleinvestors@gmail.com</p>
+            <p>⌖ Murang'a County, Kenya</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        &copy; 2026 Pinnacle Investors.
+        All Rights Reserved.
+
+        <br>
+
+        Together We Build Hope.
+
+    </div>
+
+</footer>
+
+<a href="#" class="back-top" aria-label="Back to top">↑</a>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function toggleMenu() {
+
+    const menu = document.getElementById("navLinks");
+    const button = document.getElementById("menuButton");
+
+    menu.classList.toggle("show");
+
+    button.setAttribute(
+        "aria-expanded",
+        menu.classList.contains("show")
+    );
+
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", function() {
+
+        document.getElementById("navLinks")
+        .classList.remove("show");
+
+        document.getElementById("menuButton")
+        .setAttribute("aria-expanded", "false");
+
+    });
+
+});
+
+document.addEventListener("click", function(event) {
+
+    const menu = document.getElementById("navLinks");
+    const button = document.getElementById("menuButton");
+
+    if (!menu.contains(event.target) &&
+        !button.contains(event.target)) {
+
+        menu.classList.remove("show");
+
+        button.setAttribute("aria-expanded", "false");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

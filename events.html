@@ -154,7 +154,26 @@
     .event-body {
       padding: 25px;
     }
+/* AGM Event Poster */
+.poster-container {
+  text-align: center;
+  margin-bottom: 25px;
+}
 
+.event-poster {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.event-poster:hover {
+  transform: scale(1.02);
+}
     .event-details {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -418,7 +437,16 @@
         </div>
 
         <div class="event-body">
+<!-- AGM & Anniversary Poster -->
+<div class="poster-container">
 
+  <a href="AGM2027.png" target="_blank">
+    <img src="AGM2027.png"
+         alt="Pinnacle Investors AGM and Anniversary 2027 Poster"
+         class="event-poster">
+  </a>
+
+</div>
           <div class="event-details">
 
             <div class="detail">
